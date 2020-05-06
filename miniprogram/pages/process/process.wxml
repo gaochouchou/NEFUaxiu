@@ -1,0 +1,44 @@
+<!-- 卡片代码 -->
+<view class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{images}}" wx:key="{{index}}" wx:for="{{list}}">
+  <view class="cu-item shadow">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar lg " >
+        <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="content flex-sub">
+          <view >
+              <open-data type="userNickName" lang="zh_CN"></open-data> 
+          </view>
+          <view class="text-gray text-sm flex justify-between">
+            {{item.time}}
+          </view>
+        </view>
+      </view>
+    </view>     
+    <view   class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+    <image src="{{item.fileID}}" mode='aspectFill'></image>
+    <text  class="text"   style="word-break: break-all">
+           教学楼：{{item.building}} 
+           教室：{{item.classroom}}
+           问题描述：{{item.textareaAValue}}
+           当前进度：{{item.description}}
+    </text >
+    <view class="cu-list menu-avatar comment solids-top">    
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="page__bd page__bd_spacing">
+
+    <view class="weui-footer">
+
+      <view class="weui-footer__text">
+      <br/>
+      <text class="footer__text">我也是有底线的~\n</text>
+      <text class="footer__text">Designed by NEFUaxiu</text>
+      </view>
+
+    </view>
+</view>

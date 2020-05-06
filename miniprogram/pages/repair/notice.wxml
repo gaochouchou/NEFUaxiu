@@ -1,0 +1,32 @@
+<!--miniprogram/pages/feedBack/feedBack.wxml-->
+<!--miniprogram/pages/homePage/detailed/test1.wxml-->
+<!--<text>miniprogram/pages/homePage/detailed/test1.wxml</text>-->
+<!--顶部提示栏-->
+<view class="padding bg-white text-center">
+  <view class="padding solid{{size?'s':''}}">温馨提示：公告发出后将不可更改。</view>
+</view>
+
+<!--公告标题-->
+<view class="cu-form-group  margin-top">
+  <view class="title">公告标题</view>
+  <input name="head" placeholder="请输入公告标题" bindchange="headChange"></input>
+</view>
+
+<!--公告发出单位-->
+<view class="cu-form-group">
+  <view class="title">发出单位</view>
+  <input name="author" placeholder="请输入发出公告单位" bindchange="authorChange"></input>
+</view>
+
+<!--长文本输入框-->
+<view class="cu-form-group margin-top">
+  <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput"
+            placeholder="请输入公告内容"></textarea>
+</view>
+
+<!--提交按钮-->
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-green margin-tb-sm lg" bindtap='submit' >提交</button>
+</view>
+
+

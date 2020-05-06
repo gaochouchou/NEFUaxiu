@@ -1,0 +1,10 @@
+{
+  
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#27c799",
+    "navigationBarTitleText": "东林阿修",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true 
+  
+}

@@ -1,0 +1,48 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/process/process",
+    "pages/mine/mine",
+    "pages/repair/notice",
+    "pages/feedBack/feedBack",
+    "pages/personnel/personnel",
+    "pages/repair/passwords",
+    "pages/repair/repair",
+    "pages/mine/update"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#27c799",
+    "navigationBarTitleText": "东林阿修",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#b2b4db",
+    "selectedColor": "#27c799",
+    "borderStyle": "white",
+    "backgroundColor": "#fcfcfc",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/homePage_un.png",
+        "selectedIconPath": "images/homePage.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/process/process",
+        "iconPath": "images/return_to_the_past_un.png",
+        "selectedIconPath": "images/return_to_the_past.png",
+        "text": "进程"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/id_card_un.png",
+        "selectedIconPath": "images/id_card.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

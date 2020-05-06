@@ -1,0 +1,11 @@
+ <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+ <view class='text-center margin-bottom text-lg  text-grey'>东林阿修-更新日志</view>
+  <view class='text-content'>
+    <view>v1.1</view>
+    <view>Hi！各位NEFUer们~欢迎使用东林阿修！</view>
+    <view class='margin-top-sm'>东林阿修是一款旨在帮助同学们上报教室损坏信息实现快速维修，服务同学的轻量级小程序。</view>
+    <view class='margin-top-sm'>学生教师：可以上报教室损坏的桌椅、灯管、办公室以及教室内缺少的备品。维修蜀黍可以第一时间看到然后维修的哦，有一些悄咪咪的心里话也可以说给蜀黍听~</view>
+    <view class='margin-top-sm'>维修蜀黍：可以使用登陆密码登陆维修管理平台，可以看到待维修的记录信息，维修后可以点击按钮修改记录状态。还可以发送通知给老师和学生哦~登陆密码请向“背着笔记本去冒险”团队索取哟~蜀黍辛苦啦~~~٩(๑❛ᴗ❛๑)۶</view>
+    <view class='margin-top-sm'>更多功能敬请期待！</view>
+  </view>
+</view>

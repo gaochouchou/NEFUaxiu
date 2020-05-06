@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "报修记录",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#27c799",
+  "enablePullDownRefresh": true
+}

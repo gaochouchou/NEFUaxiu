@@ -1,0 +1,34 @@
+<!--miniprogram/pages/mine/mine.wxml-->
+<view class='UCenter-bg'>
+  <image src='/images/logo.png' class='png' mode='widthFix'></image>
+  <view class='text-xl'>东林阿修
+    <text class='text-df'>v1.1</text>
+  </view>
+  <view class='margin-top-sm'>
+    <text>By:带着笔记本去冒险</text>
+  </view>
+</view>
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator url='../repair/passwords'  class="content" ver-class="none">
+        <image src="/images/maintenance.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">维修人员入口</text>
+      </navigator>
+    </view>
+
+    <view class="cu-item arrow" >
+      <navigator class="content" url="/pages/mine/update" hover-class="none"> 
+        <image src="/images/update.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">更新日志</text>
+      </navigator>
+    </view>
+
+    <view class="cu-item arrow" bindtap='showInfo'>
+      <navigator class="content" >
+        <image src="/images/logo.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">关于东林阿修</text>
+      </navigator>
+    </view>
+ </view>
+

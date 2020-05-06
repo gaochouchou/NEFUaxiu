@@ -1,0 +1,18 @@
+/* miniprogram/pages/process/process.wxss */
+page {
+  background-color: #27c799;
+  background-position-y: 50px;
+}
+.text{
+  font-size: 33rpx;
+
+}
+open-data[type="userAvatarUrl"]{
+    width: 150rpx;
+    height: 100rpx;
+    border-radius: 10%;
+    overflow: hidden;
+}
+.footer__text{
+  color: white
+}

@@ -1,0 +1,87 @@
+<!--miniprogram/pages/feedBack/feedBack.wxml-->
+<!--miniprogram/pages/homePage/detailed/test1.wxml-->
+<!--<text>miniprogram/pages/homePage/detailed/test1.wxml</text>-->
+<!--顶部提示栏-->
+<view class="padding bg-white text-center">
+    <view class="padding solid{{size?'s':''}}">为了更快解决您的问题，
+        请在发生问题时或再次遇到问题时，立即提交反馈。</view>
+</view>
+
+<!--单选框，选择报修/建议-->
+<radio-group class="block" bindchange="radioChange">
+    <view class="cu-form-group margin-top">
+        <view class="title" >公共物品损坏</view>
+        <radio checked value="feedback"></radio>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">教室建设建议</view>
+        <radio value="suggest"></radio>
+    </view>
+</radio-group>
+
+<!--教学楼选择器-->
+<view class="cu-form-group margin-top">
+    <view class="title">请选择教学楼</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+            {{index?picker[index]:'丹青楼'}}
+        </view>
+    </picker>
+</view>
+
+<view class="cu-form-group">
+    <view class="title">教室号</view>
+    <input name="classroom" placeholder="请输入教室号（例：t201）" bindchange="classRoomChange"></input>
+</view>
+
+<!--长文本输入框-->
+<view class="cu-form-group margin-top">
+    <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请详细描述您遇到的问题"></textarea>
+</view>
+
+<!--上传图片-->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        图片上传
+    </view>
+</view>
+<view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+            <image src='{{imgList[index]}}' mode='aspectFill'></image>
+            <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+                <text class="cuIcon-close"></text>
+            </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+            <text class="cuIcon-cameraadd"></text>
+        </view>
+    </view>
+</view>
+
+<!--提交按钮-->
+<view class="padding flex flex-direction">
+    <button class="cu-btn bg-green margin-tb-sm lg" bindtap='submit' >提交</button>
+</view>
+
+<!--错误提示，无图片-->
+<view >
+    <modal title="上传照片" hidden="{{modalHidden}}"
+           confirm-text="确定"
+           cancel-text="取消"
+           bindconfirm="modalBindaconfirm"
+           bindcancel="modalBindcancel">
+        为了尽快处理您的反馈，请上传照片
+    </modal>
+</view>
+
+<!--错误提示，表单错误-->
+<view >
+    <modal title="上传失败" hidden="{{modalHidden_form}}"
+           confirm-text="确定"
+           cancel-text="取消"
+           bindconfirm="modalBindaconfirm"
+           bindcancel="modalBindcancel">
+       请检查网络或表单正确性
+    </modal>
+</view>
