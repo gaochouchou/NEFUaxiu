@@ -23,6 +23,7 @@ Page({
   },
   //下拉刷新
   onPullDownRefresh() {
+    console.log('下拉刷新');
     this.onLoad();
     wx.stopPullDownRefresh();    
     console.log('停止数据加载');

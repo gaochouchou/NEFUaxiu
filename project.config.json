@@ -53,6 +53,13 @@
 					"id": -1,
 					"name": "我的",
 					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "维修填写",
+					"pathName": "pages/feedBack/feedBack",
 					"scene": null
 				}
 			]
