@@ -144,7 +144,7 @@ Page({
           console.log("图片上传成功" + res.fileID)
           db.collection('repair').add({
             data: {
-              func:this.data.radioValue,//单选框值：保修/建议
+              func:this.data.radioValue,//单选框值：报修/建议
               building: this.data.picker[this.data.index],//选择教学楼
               classroom: this.data.classroom,//选择教室号
               textareaAValue: this.data.textareaAValue,//详细问题

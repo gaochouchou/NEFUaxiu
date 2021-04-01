@@ -60,6 +60,13 @@
 					"id": -1,
 					"name": "维修填写",
 					"pathName": "pages/feedBack/feedBack",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "维修页面",
+					"pathName": "pages/repair/repair",
 					"scene": null
 				}
 			]
