@@ -151,6 +151,7 @@ Page({
               fileID: res.fileID,//图片的fileId
               time: this.data.time,//同步提交反馈时间
               description: '提交成功，等待处理。',//当前处理进度
+              isRepair:0,
             }
           }).then(res => {
             console.log(res);

@@ -9,14 +9,15 @@ Page({
    */
   data: {
     head: null,//公告标题
-    auhor: null,//公告发出单位
+    author: null,//公告发出单位
     textareaAValue: '',//长文本输入
     time: null,//时间
+    noticeID:null,//页面启动参数，用于保存本页面加载的noticeId
   },
 
   //更改公告标题框输入
   headChange(e) {
-    console.log('notice发生change事件，携带value值为：', e.detail.value);
+    // console.log('notice发生change事件，携带value值为：', e.detail.value);
     this.setData({
       head: e.detail.value
     })
@@ -24,7 +25,7 @@ Page({
 
   //更改单文本框输入
   authorChange(e) {
-    console.log('author发生change事件，携带value值为：', e.detail.value);
+    // console.log('author发生change事件，携带value值为：', e.detail.value);
     this.setData({
       author: e.detail.value
     })
@@ -37,20 +38,40 @@ Page({
     })
   },
 
-  // 数据库查询
-  findNotice(){
+  // 数据库删除
+  delete:function(){
+    console.log('noticeID:',this.data.noticeID)
+    db.collection('notice').doc(this.data.noticeID).remove({
+    }).then(res => {
+      console.log(res);
+      wx.showToast({
+        title: '公告发送成功',
+        icon: 'success',
+        duration: 2000
+      });
+    }).catch(err => {
+      console.log(err);
+      wx.showToast({
+        title: '上传失败',
+        image: '../../images/error.png'
+      });
 
+    })
+    wx.navigateBack({     //返回上一页面或多级页面
+      delta:1
+    })
   },
 
   // 数据库插入
   submit: function () {
-    if (this.data.head == null || this.data.textareaAValue == null || this.data.author == null) {
+    if (this.data.head == '' || this.data.textareaAValue == '' || this.data.author == '') {
       wx.showToast({
         title: '公告信息不完整',
         image: '../../images/error.png'
       });
     }
     else {
+      this.delete();
       // 调用函数时，传入new Date()参数，返回值是日期和时间
       var time = util.formatTime(new Date());
       // 再通过setData更改Page()里面的data，动态更新页面的数据
@@ -83,13 +104,9 @@ Page({
         });
 
       })
-      wx.switchTab({
-        url: '../process/process',
-        fail: function () {
-          console.info("跳转失败")
-        }
-      });
-
+      wx.navigateBack({     //返回上一页面或多级页面
+        delta:1
+      })
     }
 
   },
@@ -98,7 +115,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("传入参数")
+    var noticeid=options.id
+    console.log("noticeid:",noticeid)
+    console.log("options:",options)
+    this.setData({
+      noticeID:noticeid
+    })
+    db.collection('notice').doc(noticeid).get({
+      success: res => {
+        // console.log(this.noticeid)
+        console.log(res.data);
+        this.setData({
+          author:res.data.author,
+          head:res.data.head,
+          textareaAValue:res.data.textareaAValue
+        })
+        
+      }
+    })
   },
 
 

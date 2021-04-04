@@ -1,0 +1,16 @@
+页面跳转尚不正确，所列列表名字暂不准确！！！！
+
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgImage="https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg">
+    <view slot="content">
+    </view>
+  </cu-custom>
+  <view class="cu-card">
+    <view class="cu-item bg-img shadow-blur" style="background-image:url({{item.img}})" bindtap="toChild" data-url="{{item.url}}" wx:for="{{list}}" wx:key>
+      <view class="cardTitle">
+        {{item.title}}
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

@@ -40,7 +40,7 @@ Page({
           icon: 'scuuess'
         });
         wx.navigateTo({
-          url: '/pages/repair/repair'
+          url: '/pages/repair/repairindex/repairindex'
         }) ;
         console.log(res.data);
       })

@@ -16,6 +16,7 @@ Page({
     load: true,
     Record: null,
   },
+  //显示图片
   showdata: function () {
 
     db.collection('repair').where({
@@ -77,12 +78,15 @@ Page({
     wx.stopPullDownRefresh();
     console.log('停止数据加载');
   },
+
+
   onLoad() {
 
     var _this = this;
+    // 当前逻辑：获取repair库内全部数据，在渲染层进行筛选
     db.collection('repair').orderBy('time', 'desc').get({
       success: res => {
-        console.log(res.data[0]);
+        console.log('onLoad页面加载：',res.data);
         console.log(this);
         this.setData({
           list: res.data,
@@ -99,11 +103,13 @@ Page({
       build: build[0],
       listCur: build.choose[0],
     });
-
   },
+
   onReady() {
     wx.hideLoading()
   },
+
+  // 一下函数为页面显示js，与业务逻辑无关
   tabSelect(e) {
     this.setData({
       TabCur: e.currentTarget.dataset.id,
@@ -111,6 +117,7 @@ Page({
       VerticalNavTop: (e.currentTarget.dataset.id - 1) * 50
     })
   },
+
   VerticalMain(e) {
     let that = this;
     let build = this.data.build.choose;
