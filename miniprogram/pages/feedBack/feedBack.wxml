@@ -29,14 +29,15 @@
     </picker>
 </view>
 
+<!-- 教室号输入 -->
 <view class="cu-form-group">
     <view class="title">教室号</view>
-    <input name="classroom" placeholder="请输入教室号（例：t201）" bindchange="classRoomChange"></input>
+    <input name="classroom" placeholder="请输入教室号（例：t201）" bindinput="classRoomChange">{{classroom}}</input>
 </view>
 
 <!--长文本输入框-->
 <view class="cu-form-group margin-top">
-    <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请详细描述您遇到的问题"></textarea>
+    <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请详细描述您遇到的问题">{{textareaAValue}}</textarea>
 </view>
 
 <!--上传图片-->

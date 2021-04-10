@@ -11,7 +11,9 @@
     "pages/mine/update",
     "pages/repair/repairindex/repairindex",
     "pages/repair/noticeList",
-    "pages/repair/noticeEdit"
+    "pages/repair/noticeEdit",
+    "pages/repair/myOrder",
+    "pages/admin/adminindex/adminindex"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

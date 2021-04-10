@@ -45,7 +45,7 @@
         
       </view> -->
 			<view class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{list}}" wx:for-item="item2">
-				<view class="cu-item shadow" wx:if="{{item1.choose===item2.building && item2.description===('提交成功，等待处理。')}}">
+				<view class="cu-item shadow" wx:if="{{item1.choose===item2.building}}">
 					<view class="cu-list menu-avatar">
 						<view>
 
@@ -64,7 +64,7 @@
     教室号：{{item2.classroom}}
     报修时间：{{item2.time}}
     </text>
-							<button class=" bg-green " data-id='{{item2._id}}' bindtap='comfirm'>维修完成</button>
+							<button class=" bg-green " data-id='{{item2._id}}' bindtap='accept'>维修完成</button>
 						</view>
 
 					</view>

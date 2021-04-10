@@ -9,7 +9,7 @@ Component({
     list: [{
         title: '我的工单',
         img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
-        url: '/repair'
+        url: '/myOrder'
     },
       {
         title: '维修列表',
