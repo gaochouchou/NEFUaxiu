@@ -19,14 +19,13 @@ Page({
     wx.cloud.callFunction({
       name: 'login'
     }).then(res => {
-      console.log(res);
+      console.log(res.result.openid);
     });
   },
   //下拉刷新
   onPullDownRefresh(){
-    this.showdata() ;
-    this.onLoad();
-    wx.stopPullDownRefresh();
+    // this.showdata() ;
+    this.onLoad()
     console.log('停止数据加载');    
   },
   //显示图片

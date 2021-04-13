@@ -11,7 +11,7 @@
 						<open-data type="userNickName" lang="zh_CN"></open-data>
 					</view>
 					<view class="text-gray text-sm flex justify-between">
-          <view class="cu-tag badge" show="{{item.urgeOrder}}">已催单</view>
+          <view class="cu-tag badge" wx:if="{{item.urgeOrder===true}}">已催单</view>
 						{{item.time}}
 					</view>
 				</view>

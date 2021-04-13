@@ -64,7 +64,7 @@
     教室号：{{item2.classroom}}
     报修时间：{{item2.time}}
     </text>
-							<button class=" bg-green " data-id='{{item2._id}}' bindtap='accept'>维修完成</button>
+							<button class=" bg-green " data-id='{{item2._id}}' bindtap='accept'>授理工单</button>
 						</view>
 
 					</view>
