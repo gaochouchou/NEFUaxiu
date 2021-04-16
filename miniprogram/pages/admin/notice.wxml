@@ -1,0 +1,19 @@
+<!--miniprogram/pages/admin/notice.wxml-->
+<!-- <text>miniprogram/pages/admin/notice.wxml\n</text> -->
+<!-- 顶部大字体 -->
+<!-- <view  style="position: relative; left: 36rpx; top: 3rpx; font-size: 30px; font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif">通知管理</view> -->
+<!-- 列表显示通知 -->
+  <view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}" 
+      wx:for="{{noticeList}}" wx:key="index"
+      bindtap="noticeedit" data-noticeid="{{item._id}}">    
+    <view class="cu-item" class="cu-item {{menuArrow?'arrow':''}}">
+        <view class="content padding-tb-sm" >
+          <view class="content">
+            <!-- <text class="cuIcon-title text-green"></text> -->
+            <image src="/images/logo.png" class="png" mode="aspectFit"></image>
+            <text class="margin-right-xs"> {{item.head}}</text></view>
+          <view class="text-gray text-sm">
+            <text class="cuIcon-writefill margin-right-xs" maxlength="10" > {{item.textareaAValue}}</text></view>
+        </view>
+    </view>
+  </view>
