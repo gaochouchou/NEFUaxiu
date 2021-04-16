@@ -1,5 +1,7 @@
-<!--miniprogram/pages/admin/human.wxml-->
-<text>miniprogram/pages/admin/human.wxml</text>
+
+<!-- 顶部大字体 -->
+<!-- <view  style="position: relative; left: 36rpx; top: 3rpx; font-size: 30px; font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif">人资管理</view> -->
+
 
 <!-- 邀请码修改栏 -->
 <view class="cu-bar bg-white solid-bottom margin-top">
@@ -26,7 +28,7 @@
     <image class="cu-avatar round lg" src="../../images/xiaohui.jpg"></image>
     <view class="content">
       <view class="text-grey">{{item.nickname}}</view>
-      <view class="text-gray text-sm">平均完成时间：{{item.averagetime}}</view>
+      <view class="text-gray text-sm">平均授理/完成时间：{{item.averageaccepttime}}h / {{item.averagefinishtime}}h</view>
     </view>
     <view class="action">
       <!-- 右侧信息靠近屏幕边缘，新增style渲染层解决位置信息 -->
@@ -35,7 +37,7 @@
     </view>
     <view class="move">
       <view class="bg-grey" data-workerid='{{item.openid}}' bindtap="statisticworker">重新统计</view>
-      <view class="bg-red">删除</view>
+      <view class="bg-red" data-workerid='{{item._id}}' bindtap="deleteworker">删除</view>
     </view>
   </view>
 </view>

@@ -24,15 +24,36 @@ Page({
 
   // 下拉刷新
   onPullDownRefresh(){
-    this.onLoad()    
+    this.onLoad()
+  },
+
+  // 删除工程师
+  deleteworker(e){
+    // 获取当前点击的工程师的记录的id（非工程师openid）
+    var workerid=e.currentTarget.dataset.workerid
+
+    // 删除数据
+    db.collection('worker').where({
+      _id:workerid,
+    }).remove().then(res => {
+      // console.log(res)
+      wx.showToast({
+        title: '该工程师已删除',
+      })
+      this.onLoad()
+    })
+
+
   },
 
   // 重新统计工程师业务数据
   statisticworker(e){
+    var _this=this
+
     // 获取当前点击的工程师id
     var workerid=e.currentTarget.dataset.workerid
 
-    // 更新已完成的工单数
+    // 更新平均接收时间和处理时间（全部拉取数据，本地js处理）
     db.collection('repair').where(_.or([{
       isDouble:0,
       isRepair:1,
@@ -43,14 +64,32 @@ Page({
       isRepair:1,
       workerID2:workerid
     }
-    ])).count().then(res => {
-      console.log(res.total)
+    ])).get().then(res => {
+
+      // 重新计算接单/完成工单时间
+      var orderlist = res.data
+      var sumfinish = 0 //临时求和，完成工单总和
+      var sumaccept = 0 //临时求和，接受工单时间总和
+      for(let i=0;i<orderlist.length;i++){
+        // console.log(orderlist[i].finishTime)
+        var finish=new Date(orderlist[i].finishTime)
+        var accept=new Date(orderlist[i].acceptTime1)
+        var create=new Date(orderlist[i].time)
+        sumfinish = sumfinish + (finish-accept)/(1000*60*60)
+        sumaccept = sumaccept + (accept-create)/(1000*60*60)
+      }
+      var avgfinish = sumfinish/orderlist.length
+      var avgaccept = sumaccept/orderlist.length
+      console.log(avgaccept+'/'+avgfinish)
+
       // 更新数据库
       db.collection('worker').where({
         openid:workerid
       }).update({
         data:{
-          finishorder:res.total
+          finishorder:res.data.length,
+          averageaccepttime:parseInt(avgaccept),
+          averagefinishtime:parseInt(avgfinish)
         }
       }).then(res => {
         wx.showToast({
@@ -61,7 +100,6 @@ Page({
       })
     })
 
-  
   },
 
   // 更新邀请码
@@ -119,10 +157,8 @@ Page({
 
   // 加载工程师信息
   loadworkers(){
-    console.log('加载工程师信息')
     db.collection('worker').get({
     }).then(res => {
-      console.log('获取到工程师信息',res.data)
       this.setData({
         workerlist:res.data
       })
@@ -132,8 +168,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-    console.log('数据刷新')
+  onLoad: function (callback) {
     // 加载注册码
     db.collection('invitecode').where({
     }).limit(1).get({

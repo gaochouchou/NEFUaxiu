@@ -22,7 +22,7 @@ Component({
         url: '/repair'
       },
       {
-        title: '通知查看',
+        title: '发送通知',
         img: 'https://image.weilanwl.com/color2.0/plugin/qpczdh2307.jpg',
         url: '/notice'
       }

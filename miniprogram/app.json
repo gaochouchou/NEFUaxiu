@@ -14,7 +14,10 @@
     "pages/repair/noticeEdit",
     "pages/repair/myOrder",
     "pages/admin/admin-index",
-    "pages/admin/human"
+    "pages/admin/human",
+    "pages/repair/register",
+    "pages/admin/notice",
+    "pages/admin/orders"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

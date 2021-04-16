@@ -85,6 +85,30 @@
           "pathName": "pages/admin/human",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "密码登陆",
+          "pathName": "pages/repair/passwords",
+          "query": "type=admin",
+          "scene": null
+        },
+        {
+          "name": "注册工程师",
+          "pathName": "pages/repair/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "查看通知-列表",
+          "pathName": "pages/admin/notice",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "工单管理",
+          "pathName": "pages/admin/orders",
+          "query": "",
+          "scene": null
         }
       ]
     }
