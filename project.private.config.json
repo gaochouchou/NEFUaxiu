@@ -1,0 +1,128 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "维修历史",
+          "pathName": "pages/process/process",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "维修填写",
+          "pathName": "pages/feedBack/feedBack",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "待修列表",
+          "pathName": "pages/repair/repair",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "员工维修-中心页",
+          "pathName": "pages/repair/repairindex/repairindex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "查看通知页面",
+          "pathName": "pages/repair/noticeList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 7,
+          "name": "编辑通知页面",
+          "pathName": "pages/repair/noticeEdit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的工单",
+          "pathName": "pages/repair/myOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "管理中心-新",
+          "pathName": "pages/admin/admin-index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "人资管理",
+          "pathName": "pages/admin/human",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "密码登陆",
+          "pathName": "pages/repair/passwords",
+          "query": "type=admin",
+          "scene": null
+        },
+        {
+          "name": "注册工程师",
+          "pathName": "pages/repair/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "查看通知-列表",
+          "pathName": "pages/admin/notice",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "工单管理",
+          "pathName": "pages/admin/orders",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "搜索结果",
+          "pathName": "pages/admin/orders-search",
+          "query": "date=2021/04/08&func=feedback&building=丹青楼&classroom=123",
+          "scene": null
+        },
+        {
+          "name": "耗材管理",
+          "pathName": "pages/admin/material",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

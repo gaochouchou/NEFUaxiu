@@ -1,4 +1,5 @@
 {
+<<<<<<< master
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
@@ -65,4 +66,134 @@
 			]
 		}
 	}
+=======
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "appid": "wx5400d0f9e08f8828",
+  "projectname": "NEFUaxiu",
+  "libVersion": "2.14.1",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "维修历史",
+          "pathName": "pages/process/process",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "维修填写",
+          "pathName": "pages/feedBack/feedBack",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "待修列表",
+          "pathName": "pages/repair/repair",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "员工维修-中心页",
+          "pathName": "pages/repair/repairindex/repairindex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "查看通知页面",
+          "pathName": "pages/repair/noticeList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 7,
+          "name": "编辑通知页面",
+          "pathName": "pages/repair/noticeEdit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的工单",
+          "pathName": "pages/repair/myOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "管理中心页面",
+          "pathName": "pages/admin/adminindex/adminindex",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+>>>>>>> local
 }
