@@ -1,4 +1,7 @@
 {
   "usingComponents": {},
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "通知管理",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#efefef"
 }

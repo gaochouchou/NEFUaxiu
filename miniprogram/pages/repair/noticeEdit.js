@@ -45,20 +45,20 @@ Page({
     }).then(res => {
       console.log(res);
       wx.showToast({
-        title: '公告发送成功',
+        title: '公告已删除',
         icon: 'success',
         duration: 2000
       });
     }).catch(err => {
       console.log(err);
       wx.showToast({
-        title: '上传失败',
+        title: '刷新页面',
         image: '../../images/error.png'
       });
 
     })
-    wx.navigateBack({     //返回上一页面或多级页面
-      delta:1
+    wx.redirectTo({
+      url: '/pages/admin/notice',
     })
   },
 
@@ -71,7 +71,6 @@ Page({
       });
     }
     else {
-      this.delete();
       // 调用函数时，传入new Date()参数，返回值是日期和时间
       var time = util.formatTime(new Date());
       // 再通过setData更改Page()里面的data，动态更新页面的数据
@@ -82,7 +81,7 @@ Page({
         title: '上传中',
         icon: 'loading'
       });
-      db.collection('notice').add({
+      db.collection('notice').doc(this.data.noticeID).update({
         data: {
           head: this.data.head,//通知标题
           author: this.data.author,//通知发出方
@@ -92,7 +91,7 @@ Page({
       }).then(res => {
         console.log(res);
         wx.showToast({
-          title: '公告发送成功',
+          title: '公告已更新',
           icon: 'success',
           duration: 2000
         });
@@ -104,8 +103,8 @@ Page({
         });
 
       })
-      wx.navigateBack({     //返回上一页面或多级页面
-        delta:1
+      wx.redirectTo({
+        url: '/pages/admin/notice',
       })
     }
 

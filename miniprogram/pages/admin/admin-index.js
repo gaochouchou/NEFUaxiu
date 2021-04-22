@@ -86,7 +86,7 @@ Page({
       },
       {
         title: '耗材管理',
-        name: 'Material',
+        name: 'material',
         color: 'purple',
         icon: 'tagfill'
       },

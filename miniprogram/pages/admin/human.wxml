@@ -12,7 +12,7 @@
 <form>
   <view class="cu-form-group">
 		<view class="title">注册码</view>
-		<input placeholder="输入框带个按钮" value="{{invite.invitecode}}" bindinput="invitecodechange"></input>
+		<input placeholder="请输入注册码" value="{{invite.invitecode}}" bindinput="invitecodechange"></input>
 		<button class="cu-btn bg-green shadow" bindtap="updateinvitecode">确认</button>
   </view>
 </form>

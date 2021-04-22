@@ -1,5 +1,8 @@
 {
   "usingComponents": {},
   "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark"
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "人资管理",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#efefef"
 }
