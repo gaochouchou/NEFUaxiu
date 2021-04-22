@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "工单管理-查询结果",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#27c799",
+  "enablePullDownRefresh": true
+}

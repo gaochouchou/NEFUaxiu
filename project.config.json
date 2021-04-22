@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 <<<<<<< master
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
@@ -67,6 +68,8 @@
 		}
 	}
 =======
+=======
+>>>>>>> develop
   "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
   "setting": {
@@ -85,7 +88,10 @@
     "uploadWithSourceMap": true,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
+<<<<<<< HEAD
     "useApiHostProcess": true,
+=======
+>>>>>>> develop
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -98,7 +104,12 @@
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
+<<<<<<< HEAD
     "minifyWXSS": true
+=======
+    "minifyWXSS": true,
+    "useApiHostProcess": true
+>>>>>>> develop
   },
   "appid": "wx5400d0f9e08f8828",
   "projectname": "NEFUaxiu",
@@ -195,5 +206,8 @@
       ]
     }
   }
+<<<<<<< HEAD
 >>>>>>> local
+=======
+>>>>>>> develop
 }

@@ -37,6 +37,11 @@ Page({
     })
   },
 
+  // 数据库查询
+  findNotice(){
+
+  },
+
   // 数据库插入
   submit: function () {
     if (this.data.head == null || this.data.textareaAValue == null || this.data.author == null) {
@@ -93,7 +98,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
 

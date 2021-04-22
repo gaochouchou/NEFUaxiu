@@ -1,0 +1,43 @@
+
+<!-- 顶部大字体 -->
+<!-- <view  style="position: relative; left: 36rpx; top: 3rpx; font-size: 30px; font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif">人资管理</view> -->
+
+
+<!-- 邀请码修改栏 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 工程师注册码
+  </view>
+</view>
+<form>
+  <view class="cu-form-group">
+		<view class="title">注册码</view>
+		<input placeholder="请输入注册码" value="{{invite.invitecode}}" bindinput="invitecodechange"></input>
+		<button class="cu-btn bg-green shadow" bindtap="updateinvitecode">确认</button>
+  </view>
+</form>
+
+<!-- 员工管理列表 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 工程师管理（左滑试试）
+  </view>
+</view>
+<view class="cu-list menu-avatar">
+  <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{workerlist}}" wx:key="index" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+    <image class="cu-avatar round lg" src="../../images/xiaohui.jpg"></image>
+    <view class="content">
+      <view class="text-grey">{{item.nickname}}</view>
+      <view class="text-gray text-sm">平均授理/完成时间：{{item.averageaccepttime}}h / {{item.averagefinishtime}}h</view>
+    </view>
+    <view class="action">
+      <!-- 右侧信息靠近屏幕边缘，新增style渲染层解决位置信息 -->
+      <view class="text-grey text-xs" style="left: -31rpx; position: relative; top: 3rpx">{{item.createtime}}</view>
+      <view class="cu-tag round bg-green sm" style="position: relative; top: -5rpx; left: -38rpx">已完成:{{item.finishorder}}</view>
+    </view>
+    <view class="move">
+      <view class="bg-grey" data-workerid='{{item.openid}}' bindtap="statisticworker">重新统计</view>
+      <view class="bg-red" data-workerid='{{item._id}}' bindtap="deleteworker">删除</view>
+    </view>
+  </view>
+</view>

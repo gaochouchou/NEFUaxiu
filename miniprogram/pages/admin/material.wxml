@@ -1,0 +1,42 @@
+<!--miniprogram/pages/admin/material.wxml-->
+<text>miniprogram/pages/admin/material.wxml</text>
+<!-- 顶部滚动栏（失效） -->
+<view class='notice-wrap' hidden='false'>
+　　<view class='tongzhitext'>
+　　　　<text class="tongzhi-text">13456</text>
+　　</view>
+　　<view bindtap='switchNotice' class="closeView">x</view>
+</view>
+
+<!-- 邀请码修改栏 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 新增耗材
+  </view>
+</view>
+<form>
+  <view class="cu-form-group">
+		<view class="title">耗材名称</view>
+		<input placeholder="请输入耗材名称" value="{{invite.invitecode}}" bindinput="materialname" value="{{materialname}}"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">耗材单位</view>
+		<input placeholder="请输入耗材单位" value="{{invite.invitecode}}" bindinput="materialunit" value="{{materialunit}}"></input>
+		<button class="cu-btn bg-green shadow" bindtap="newmaterial">确认</button>
+  </view>
+</form>
+
+<!-- 耗材列表 -->
+<view class="margin-top cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+    <view class="cu-item {{menuArrow?'arrow':''}}" wx:for="{{materiallist}}" wx:key="index">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{item.materialname}}({{item.materialunit}})</text>
+      </view>
+      <view class="action">
+        <text class="cuIcon-pullleft lg text-orange" data-listindex="{{index}}" bindtap="decrease"></text>
+        {{item.num}}
+        <text class="cuIcon-pullright lg text-olive" data-listindex="{{index}}" bindtap="increase"></text>
+      </view>
+    </view>
+</view>

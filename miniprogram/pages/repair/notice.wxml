@@ -3,7 +3,7 @@
 <!--<text>miniprogram/pages/homePage/detailed/test1.wxml</text>-->
 <!--顶部提示栏-->
 <view class="padding bg-white text-center">
-  <view class="padding solid{{size?'s':''}}">温馨提示：公告发出后将不可更改。</view>
+  <view class="padding solid{{size?'s':''}}">温馨提示：公告发出后请联系管理员进行编辑。</view>
 </view>
 
 <!--公告标题-->

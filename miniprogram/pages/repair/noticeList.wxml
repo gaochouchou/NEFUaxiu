@@ -1,0 +1,22 @@
+<!--公告栏-->
+
+<block wx:if="{{TabCur==0}}" wx:key="{{index}}" wx:for="{{list}}">
+	<view bindtap="gotoNoticeEdit" data-cur='{{item._id}}'>
+		<view class="cu-bar bg-white solid-bottom margin-top" >
+			<view class="action">
+				<text class="cuIcon-title text-green"></text>{{item.head}}
+			</view>
+		</view>
+		<view class="bg-white padding">
+			<view class=" cf padding-sm">
+				<view class="bg-blue radius fl padding-sm">
+					<text align="right">{{item.textareaAValue}}
+					{{item.time}}
+					{{item.author}}
+					</text>
+				</view>
+
+			</view>
+		</view>
+	</view>
+</block>

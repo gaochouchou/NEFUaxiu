@@ -1,6 +1,4 @@
 {
-  "navigationBarTitleText": "报修处理",
-  "navigationBarTextStyle": "white",
-  "backgroundColor": "#27c799",
-  "enablePullDownRefresh": true
+  
+  "component": true
 }

@@ -1,0 +1,5 @@
+/* miniprogram/pages/repair/noticeEdit.wxss */
+/* miniprogram/pages/feedBack/feedBack.wxss */
+page{
+  background-color: #f8f8f8;
+}

@@ -11,10 +11,17 @@
 
 <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
     <view class="cu-item arrow">
-      <navigator url='../repair/passwords'  class="content" ver-class="none">
+      <view bindtap="workerentry"  class="content" ver-class="none">
         <image src="/images/maintenance.png" class="png" mode="aspectFit"></image>
         <text class="text-grey">维修人员入口</text>
-      </navigator>
+      </view>
+    </view>
+
+    <view class="cu-item arrow">
+      <view bindtap="adminentry"  class="content" ver-class="none">
+        <image src="/images/statistics.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">管理中心入口</text>
+      </view>
     </view>
 
     <view class="cu-item arrow" >

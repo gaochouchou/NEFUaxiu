@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/process/process",
     "pages/mine/mine",
@@ -9,7 +8,18 @@
     "pages/personnel/personnel",
     "pages/repair/passwords",
     "pages/repair/repair",
-    "pages/mine/update"
+    "pages/mine/update",
+    "pages/repair/repairindex/repairindex",
+    "pages/repair/noticeList",
+    "pages/repair/noticeEdit",
+    "pages/repair/myOrder",
+    "pages/admin/admin-index",
+    "pages/admin/human",
+    "pages/repair/register",
+    "pages/admin/notice",
+    "pages/admin/orders",
+    "pages/admin/orders-search",
+    "pages/admin/material"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

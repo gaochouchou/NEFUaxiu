@@ -8,6 +8,21 @@ Page({
 
   },
 
+  // 维修员工入口
+  workerentry(){
+    wx.navigateTo({
+      url: '/pages/repair/passwords?type='+'worker',
+    })
+  },
+
+  // 管理中心入口
+  adminentry(){
+    wx.navigateTo({
+      url: '/pages/repair/passwords?type='+'admin',
+    })
+  },
+
+  // 模态框控制函数
   showInfo: function () {
     wx.showModal({
       title: '关于东林阿修',

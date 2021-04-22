@@ -1,0 +1,55 @@
+<!--miniprogram/pages/repair/register.wxml-->
+<text>miniprogram/pages/repair/register.wxml</text>
+<!--miniprogram/pages/feedBack/feedBack.wxml-->
+<!--miniprogram/pages/homePage/detailed/test1.wxml-->
+<!--<text>miniprogram/pages/homePage/detailed/test1.wxml</text>-->
+<!--顶部提示栏-->
+<view class="padding bg-white text-center">
+    <view class="padding solid{{size?'s':''}}">欢迎您成为东林工程师的一员，
+        填写完注册信息后，您的微信将支持免密登录。</view>
+</view>
+
+<!-- 注册码 -->
+<view class="cu-form-group  margin-top">
+    <view class="title">注册码</view>
+    <input name="classroom" placeholder="请向管理员索取注册码" bindinput="invitecodeChange">{{invitecode}}</input>
+</view>
+
+<!-- 姓名 -->
+<view class="cu-form-group">
+    <view class="title">姓名</view>
+    <input name="classroom" placeholder="建议填写真实姓名用于统计等" bindinput="nicknameChange">{{nickname}}</input>
+</view>
+<!-- 用户名 -->
+<view class="cu-form-group   margin-top">
+    <view class="title">用户名</view>
+    <input name="classroom" placeholder="用于登陆系统" bindinput="usernameChange">{{username}}</input>
+</view>
+<!-- 登陆密码 -->
+<view class="cu-form-group">
+    <view class="title">密码</view>
+    <input name="classroom" placeholder="请输入密码" bindinput="passwordChange">{{password}}</input>
+</view>
+<!-- 登陆密码 -->
+<view class="cu-form-group">
+    <view class="title">密码</view>
+    <input name="classroom" placeholder="请确认密码" bindinput="passwordagainChange">{{passwordagain}}</input>
+</view>
+
+
+<!--提交按钮-->
+<view class="padding flex flex-direction">
+    <button class="cu-btn bg-green margin-tb-sm lg" bindtap='submit' >提交</button>
+</view>
+
+
+<!--错误提示，表单错误-->
+<view >
+    <modal title="上传失败" hidden="{{modalHidden_form}}"
+           confirm-text="确定"
+           cancel-text="取消"
+           bindconfirm="modalBindaconfirm"
+           bindcancel="modalBindcancel">
+       请检查网络或表单正确性
+    </modal>
+</view>

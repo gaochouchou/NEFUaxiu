@@ -8,10 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    radioValue: '',//单选框
+    radioValue: 'feedback',//单选框
     index: 0,//picker数组下角标
-    building: null,//building值
-    classroom: null,//classroom值
+    building: 0,//building值
+    classroom: '',//classroom值
     picker: ['丹青楼', '锦绣楼', '成栋楼', '主楼', '交通学院实验中心', '图书馆A区', '图书馆B区', '研究生楼', '动资楼', '理学楼', '文法楼', '文博楼', '工程楼', '逸夫楼']
 , //教学楼选择器备选
     imgList: [],//图片
@@ -22,7 +22,7 @@ Page({
     modalHidden_form: true,//是否隐藏对话框（表单）
   },
   radioChange(e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value);
+    // console.log('radio发生change事件，携带value值为：', e.detail.value);
     this.setData({
       radioValue: e.detail.value
     })
@@ -30,7 +30,7 @@ Page({
 
   // 选择器函数
   PickerChange(e) {
-    console.log('Picker发生change事件，携带value值为：', e.detail.value);
+    // console.log('Picker发生change事件，携带value值为：', e.detail.value);
     this.setData({
       index: e.detail.value
     })
@@ -38,7 +38,7 @@ Page({
 
   //更改单文本框输入
   classRoomChange(e) {
-    console.log('class发生change事件，携带value值为：', e.detail.value);
+    // console.log('class发生change事件，携带value值为：', e.detail.value);
     this.setData({
       classroom: e.detail.value
     })
@@ -51,7 +51,7 @@ Page({
     })
   },
 
-  //image函数
+  //image函数(选择图片)
   ViewImage(e) {
     wx.previewImage({
       urls: this.data.imgList,
@@ -93,7 +93,7 @@ Page({
     })
   },
 
-  // model确定取消按钮
+  // model确定取消按钮（上传图片model框）
   //确定按钮点击事件
   modalBindaconfirm: function () {
     this.setData({
@@ -108,27 +108,33 @@ Page({
     })
   },
 
-  // model确定取消按钮
+  // model确定取消按钮(表单正确性模态框)
   //确定按钮点击事件
   modalBindaconfirm_form: function () {
     this.setData({
-      modalHidden_form: !this.data.modalHidden,
+      modalHidden_form: !this.data.odalHidden_form,
     })
   },
   //取消按钮点击事件
   modalBindcancel_form: function () {
     this.setData({
-      modalHidden_form: !this.data.modalHidden,
+      modalHidden_form: !this.data.odalHidden_form,
     })
   },
 
+  
   // 数据库插入
   submit: function () {
-    if(this.data.classroom==null || this.data.textareaAValue==null){
+    if(this.data.classroom=='' || this.data.textareaAValue==''){
+      // // toast提示
       wx.showToast({
         title: '报修信息不完整',
         image: '../../images/error.png'
       });
+      // 模态框提示(暂不可用，未知)
+      // _this.setData({
+      //   modalHidden_form: !this.data.odalHidden_form,
+      // })
     }
     else{
       const tempFilePaths = this.data.imgList
@@ -144,13 +150,25 @@ Page({
           console.log("图片上传成功" + res.fileID)
           db.collection('repair').add({
             data: {
-              func:this.data.radioValue,//单选框值：保修/建议
+              func:this.data.radioValue,//单选框值：报修/建议
               building: this.data.picker[this.data.index],//选择教学楼
               classroom: this.data.classroom,//选择教室号
               textareaAValue: this.data.textareaAValue,//详细问题
               fileID: res.fileID,//图片的fileId
               time: this.data.time,//同步提交反馈时间
               description: '提交成功，等待处理。',//当前处理进度
+              workerID1:null,//第一次接单修理员工openID
+              workerID2:null,//第二次接单修理员工openID
+              isAccept:0,//是否接单标记符，0为未接单，1为接单
+              isRepair:0,//是为已完成修理标记符，0为未完成修理，1未完成修理
+              isDouble:0,//是否被退单标记符，0为被退单，1为二次接单
+              acceptTime1:null,//接单时间
+              acceptTime2:null,//接单时间
+              finishTime:null,//完成订单时间
+              urgeOrder:0,//催派订单标识符
+              abOrder:0//异常订单标识符
+              
+              
             }
           }).then(res => {
             console.log(res);

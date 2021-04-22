@@ -1,37 +1,39 @@
 <!--顶部直接反馈按钮-->
 <view class="cu-bar bg-white margin-top">
-  <view class='action'>
-    <text class='cuIcon-title text-green'></text>发送通知在这里哦*~*->
-  </view>
-  <navigator url='/pages/repair/notice'  class='row'>
-    <view class='action'>
-      <button class='cu-btn bg-green shadow' navigator url='/pages/repair/notice' >
-        发送通知
-      </button>
-    </view>
-  </navigator>
+	<view class='action'>
+		<text class='cuIcon-title text-green'></text>发送通知在这里哦*~*->
+	</view>
+	<navigator url='/pages/repair/notice' class='row'>
+		<view class='action'>
+			<button class='cu-btn bg-green shadow' navigator url='/pages/repair/notice'>
+				发送通知
+			</button>
+		</view>
+	</navigator>
 </view>
 
-<view class="VerticalBox">
+
 <!-- 侧边导航栏 -->
-<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh )"><view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{build}}" wx:key bindtap='tabSelect' data-id="{{index}}">
-      {{item.choose}}
-    </view>
-  </scroll-view>
-  <!-- <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:1100rpx" style="width: 250rpx">
+<view class="VerticalBox">
+	<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh )">
+		<view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{build}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+			{{item.choose}}
+		</view>
+	</scroll-view>
+	<!-- <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:1100rpx" style="width: 250rpx">
     <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{build}}" wx:key bindtap='tabSelect' data-id="{{index}}">
      {{item.choose}}
     </view>
   </scroll-view> -->
-  <!-- 侧边导航栏 -->
-  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh )" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain" >
-    <view class="padding-top padding-lr"  wx:for="{{build}}" wx:key id="main-{{index}}"  wx:for-item="item1" >
-      <view class='cu-bar solid-bottom bg-white' >
-        <view class='action'>
-          <text class='cuIcon-title text-green'></text> {{item1.choose}}
-          </view>
-      </view>
-      <!-- <view class="cu-list menu-avatar" wx:for="{{list}}" wx:for-item="item2"> 
+	<!-- 侧边导航栏 -->
+	<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh )" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+		<view class="padding-top padding-lr" wx:for="{{build}}" wx:key id="main-{{index}}" wx:for-item="item1">
+			<view class='cu-bar solid-bottom bg-white'>
+				<view class='action'>
+					<text class='cuIcon-title text-green'></text> {{item1.choose}}
+				</view>
+			</view>
+			<!-- <view class="cu-list menu-avatar" wx:for="{{list}}" wx:for-item="item2"> 
         <view class="cu-item" wx:if ="{{item1.choose===item2.building && item2.description===('提交成功，等待处理。')}}">
           <image src="{{item2.fileID}}" mode='widthFix' class="img"></image>
           {{item2.textareaAValue}}
@@ -42,33 +44,33 @@
         </view>
         
       </view> -->
-<view class="cu-card dynamic {{isCard?'no-card':''}}"  wx:for="{{list}}" wx:for-item="item2">
-  <view class="cu-item shadow" wx:if ="{{item1.choose===item2.building && item2.description===('提交成功，等待处理。')}}">
-    <view class="cu-list menu-avatar">
-      <view >
-        
-        <view class="content flex-sub">
-          
-          
-        </view>
-      </view>
-    </view>     
-    <view   class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
-    
-    <view class="cu-list menu-avatar comment solids-top"> 
-    <image src="{{item2.fileID}}" mode='widthFix' class="img"></image>
-    <text>
+			<view class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{list}}" wx:for-item="item2">
+				<view class="cu-item shadow" wx:if="{{item1.choose===item2.building}}">
+					<view class="cu-list menu-avatar">
+						<view>
+
+							<view class="content flex-sub">
+
+
+							</view>
+						</view>
+					</view>
+					<view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+
+						<view class="cu-list menu-avatar comment solids-top">
+							<image src="{{item2.fileID}}" mode='widthFix' class="img"></image>
+							<text>
     问题描述：{{item2.textareaAValue}} 
     教室号：{{item2.classroom}}
     报修时间：{{item2.time}}
     </text>
-    <button class=" bg-green " data-id='{{item2._id}}' bindtap='comfirm'>维修完成</button>
-      </view>
-    
-    </view>
-  </view>
-</view>
-    </view>
-  </scroll-view>
-  
+							<button class=" bg-green " data-id='{{item2._id}}' bindtap='accept'>授理工单</button>
+						</view>
+
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+
 </view>

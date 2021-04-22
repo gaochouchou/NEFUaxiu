@@ -5,6 +5,7 @@
     "navigationBarBackgroundColor": "#27c799",
     "navigationBarTitleText": "东林阿修",
     "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true 
+    "enablePullDownRefresh": true ,
+    "usingComponents": {}
   
 }

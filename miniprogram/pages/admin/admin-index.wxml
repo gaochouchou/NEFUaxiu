@@ -1,0 +1,18 @@
+<!--miniprogram/pages/admin/admin-index.wxml-->
+<text>miniprogram/pages/admin/admin-index.wxml</text>
+<!-- 图表 -->
+<view class="container">
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<!-- 页面按钮 -->
+<!-- <scroll-view scroll-y class="scrollPage"> -->
+  <view class='nav-list'>
+    <navigator open-type="navigate" hover-class='none' url="/pages/admin/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
+      <view class="nav-title">{{item.title}}</view>
+      <view class="nav-name">{{item.name}}</view>
+      <text class='cuIcon-{{item.icon}}'></text>
+    </navigator>
+  </view>
+  <view class='cu-tabbar-height'></view>
+<!-- </scroll-view> -->

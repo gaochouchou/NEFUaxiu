@@ -1,0 +1,85 @@
+<!-- 卡片代码 -->
+<view class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{list}}" wx:key="{{index}}">
+	<view class="cu-item shadow">
+		<view class="cu-list menu-avatar">
+			<view class="cu-item">
+				<view class="cu-avatar lg ">
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
+				<view class="content flex-sub">
+					<view>
+						<open-data type="userNickName" lang="zh_CN"></open-data>
+					</view>
+					<view class="text-gray text-sm flex justify-between">
+					<view class="cu-tag badge badge-top bg-orange" wx:if="{{item.urgeOrder==='师生已催单，请尽快处理'}}" style="position: absolute; left: 450rpx; top: 19rpx">已催单</view>
+						创建时间：{{item.time}}
+					</view>
+					<view class="text-gray text-sm flex justify-between">
+						工单状态：{{item.abOrder}}
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+			<image src="{{item.fileID}}" mode='aspectFill' bindtap="imgPreview" data-imgsrc="{{item.fileID}}"></image>
+			<text  class="text"   style="word-break: break-all">
+           工单类型：{{item.func}} 
+           教学楼：{{item.building}} 
+           教室：{{item.classroom}}
+           问题描述：{{item.textareaAValue}}           
+           当前进度：{{item.description}}
+           是否转派工单：{{item.isDouble}}
+           是否催单：{{item.urgeOrder}}
+    </text>
+			<view class="cu-list menu-avatar comment solids-top"></view>
+			<view class="padding-s" style="width: 634rpx; height: 236rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+				<button class="cu-btn block bg-green margin-tb-sm lg" 
+								data-orderid='{{item._id}}' bindtap="finishOrder" style="width: 269rpx; height: 80rpx; display: flex; box-sizing: border-box; left: 11rpx; top: -3rpx; position: relative">完成工单</button>
+
+				<button class="cu-btn block bg-yellow margin-tb-sm lg" 
+								data-orderid='{{item._id}}' bindtap="backOrder" style="width: 271rpx; height: 80rpx; display: flex; box-sizing: border-box; left: 371rpx; top: -100rpx; position: relative; background-color: #27c799; color: white">退单</button>
+				
+				<button class="cu-btn block bg-red margin-tb-sm lg" 
+								data-orderid='{{item._id}}' bindtap="deleteOrder"  style="position: relative; left: 9rpx; top: -90rpx; width: 271rpx; height: 80rpx; display: flex; box-sizing: border-box">删除工单</button>
+				<button class="cu-btn block bg-red margin-tb-sm lg" 
+								data-orderid='{{item._id}}' bindtap="pressOrder"  style="position: relative; left: 371rpx; top: -188rpx; width: 271rpx; height: 80rpx; display: flex; box-sizing: border-box; color: white; background-color: #EE6363">催单</button>
+
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 底线代码 -->
+<view class="page__bd page__bd_spacing">
+
+	<view class="weui-footer">
+
+		<view class="weui-footer__text">
+			<br />
+			<text class="footer__text">我也是有底线的~\n</text>
+			<text class="footer__text">Designed by NEFUaxiu</text>
+		</view>
+	</view>
+</view>
+
+<!-- 模态框代码(未启用) -->
+<view class="cu-modal {{modalName=='true'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">Modal标题</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      Modal 内容。
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left" bindtap="hideModal">确定</button>
+
+      </view>
+    </view>
+  </view>
+</view>
